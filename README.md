@@ -22,10 +22,10 @@ sweep_analysis.mlx
 
 Portfolio.mlx
   sm_mile4max_matrix.csv: 
-  The sorted version of sm_mile4max wherein the tracts are sorted with the tracts with the worst current state at the top and their associated values sorted accordingly. 
+  The sorted version of sm_mile4max wherein the tracts are sorted with the tracts with the worst current state of each health outcome at the top and their associated values sorted accordingly. Quartet of columns contains the Tract number, the current state, maximum possible improvement and the miles added to acheive this improvement. There are 12 columns total, four for each health outcome. 
   
   best_portfolio: 
-  Comparing the max improvement values, the maximum improvement for each row is selected and the corresponding number of miles is added to a portfolio along with the tract number and the improvement. No tract has more than 2 miles added to it, and a 1 point improvement is considered equal in every category. 
+  Comparing the max improvement values, the maximum improvement for each row (from the sm_mile4max_matrix) is selected and the corresponding number of miles is added to a portfolio along with the tract number and the improvement. No tract has more than 2 miles added to it, and a 1 point improvement is considered equal in every category. Every iteration involves a series of checks to make sure that the correct value is selected, to see if the tract has already been added to the portfolio (if it has, there is a secondary check to compare the two values and select the value of miles that corresponds to the largest improvement), and to make sure that the selected value isn't an empty array.  
   
   best_portfolio_health outcome_package size: 
   The best portfolio for a given package size for each health outcome. Packages range from 1 to 25 miles, no tract has more than 2 miles added.
